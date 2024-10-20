@@ -47,7 +47,7 @@ export function ModeToggle() {
           System
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleSunsetMode()}>
-        Auto Dark Mode
+          sun
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

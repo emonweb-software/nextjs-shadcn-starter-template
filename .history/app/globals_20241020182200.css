@@ -79,5 +79,5 @@ body {
 
 button:focus {
   outline: none !important;
-  box-shadow: none !important;
+  box-shadow: none !important
 }

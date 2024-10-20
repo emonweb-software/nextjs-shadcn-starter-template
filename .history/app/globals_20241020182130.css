@@ -78,6 +78,6 @@ body {
 }
 
 button:focus {
-  outline: none !important;
-  box-shadow: none !important;
+  outline: none !important; /* Bỏ viền */
+  box-shadow: none !important; /* Bỏ shadow */
 }
