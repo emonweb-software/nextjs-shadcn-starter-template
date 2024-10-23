@@ -11,7 +11,7 @@ interface IParams {
 
 interface ICallAPI {
   url: string;
-  method?: 'get' | 'post' | 'put' | 'delete';
+  method?: "get" | "post" | "put" | "delete";
   body?: unknown;
   isFormData?: boolean;
   params?: IParams;
@@ -54,4 +54,4 @@ export default async function callAPI({
       }
     }
   }
-};
+}

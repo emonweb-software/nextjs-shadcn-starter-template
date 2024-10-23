@@ -6,5 +6,5 @@ interface IDataResponse<T> {
 
 interface IAxiosResponse<T> {
   status: number;
-  data: IDataResponse<T>
+  data: IDataResponse<T>;
 }

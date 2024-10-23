@@ -11,7 +11,7 @@
     "format": "prettier --write ."
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,ts,tsx,json,md}": [
       "npm run lint",
       "npm run format"
     ]
