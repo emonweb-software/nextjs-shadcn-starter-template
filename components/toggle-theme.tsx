@@ -11,10 +11,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useTranslations } from "next-intl";
 
 export function ModeToggle() {
   const { setTheme } = useTheme();
-
+  const t = useTranslations("LoginPage");
   const handleSunsetMode = () => {
     const hour = new Date().getHours();
     if (hour >= 6 && hour < 18) {
@@ -35,16 +36,16 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
+          {t("Light")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
+          {t("Dark")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
+          {t("System")}
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleSunsetMode()}>
-          Auto Dark Mode
+          {t("AutoDarkMode")}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
