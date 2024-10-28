@@ -6,6 +6,7 @@ import { Button } from "./ui/button";
 import { delay as performSignIn } from "@/helpers/common";
 import { Form as FormProvider } from "./ui/form";
 import FormInput from "./form-input";
+import { useTranslations } from "next-intl";
 
 const SignInSchema = z.object({
   email: z.string().email(),
@@ -15,6 +16,8 @@ const SignInSchema = z.object({
 type SignInFormValues = z.infer<typeof SignInSchema>;
 
 export default function SignInForm() {
+  const t = useTranslations("LoginPage");
+
   const form = useZodForm({
     schema: SignInSchema,
     defaultValues: {
@@ -42,22 +45,22 @@ export default function SignInForm() {
     <FormProvider {...form}>
       <form
         onSubmit={handleSubmit(onSignIn)}
-        className="space-y-8 min-w-96 max-w-[600px] p-6 bg-white shadow-lg rounded-lg">
+        className="space-y-8 min-w-96 max-w-[600px] p-6 background shadow-lg rounded-lg border">
         <FormInput
           control={control}
           name="email"
-          label="Email"
-          placeholder="Enter your email"
+          label={t("Email")}
+          placeholder={t("PlaceholderEmail")}
         />
         <FormInput
           control={control}
           type="password"
           name="password"
-          label="Password"
-          placeholder="Enter your password"
+          label={t("Password")}
+          placeholder={t("PlaceholderPassWord")}
         />
         <Button type="submit" disabled={isSubmitting}>
-          {(isSubmitting && "Signing up...") || "Sign up"}
+          {(isSubmitting && `${t("SignUp")}...`) || t("SignUp")}
         </Button>
       </form>
     </FormProvider>

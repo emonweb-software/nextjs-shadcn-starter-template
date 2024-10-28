@@ -1,0 +1,14 @@
+{
+  "LoginPage": {
+    "Email": "Email",
+    "Password": "Mật khẩu",
+    "PlaceholderEmail": "hãy nhập email",
+    "PlaceholderPassWord": "hãy nhập mật khẩu",
+    "SignUp": "đăng nhập",
+    "Light": "sáng",
+    "Dark": "đêm",
+    "System": "theo cài đặt",
+    "AutoDarkMode": "Chế độ tối tự động",
+    "language": "ngôn ngữ"
+  }
+}

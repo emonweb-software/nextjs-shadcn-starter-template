@@ -1,0 +1,14 @@
+{
+  "LoginPage": {
+    "Email": "Email",
+    "Password": "Password",
+    "PlaceholderEmail": "Enter your email",
+    "PlaceholderPassWord": "Enter your password",
+    "SignUp": "Sign up",
+    "Light": "Light",
+    "Dark": "Dark",
+    "System": "System",
+    "AutoDarkMode": "Auto Dark Mode",
+    "language": "Language"
+  }
+}
