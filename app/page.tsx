@@ -1,6 +1,7 @@
 import { ModeToggle } from "@/components/toggle-theme";
 import SignInForm from "@/components/sign-in-form";
 import { LocaleSwitcherSelect } from "@/components/locale-switcher-select";
+import SearchBox from "@/components/search-funcitonality";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <ModeToggle />
       <LocaleSwitcherSelect />
       <SignInForm />
+      <SearchBox />
     </div>
   );
 }
