@@ -10,5 +10,15 @@
     "System": "System",
     "AutoDarkMode": "Auto Dark Mode",
     "language": "Language"
+  },
+  "InternalErrorPage": {
+    "title": "The server is down",
+    "description": "We encountered an unexpected error. Our team has been notified, and we are working to fix it. Please try again later",
+    "retry": "Retry"
+  },
+  "NotFoundPage": {
+    "title": "Page Not Found",
+    "description": "This page is not exist on our website",
+    "backToHome": "Back to home"
   }
 }
