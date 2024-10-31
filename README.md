@@ -1,60 +1,74 @@
 # Nextjs Shadcn Starter Template
 
-## Thông tin cơ bản
+[![English](https://img.shields.io/badge/lang-english-blue.svg)](README.md) [![Vietnamese](https://img.shields.io/badge/lang-vietnamese-blue.svg)](README.vi.md)
 
-- CE: `Visual Studio Code`
+## Introduction
+
+Welcome to the Nextjs Shadcn Starter Template! This project serves as a robust foundation for building modern web applications using Next.js and TypeScript. With a focus on user experience, performance, and SEO, this template incorporates essential features such as multi-language support, form validation, and optimized image loading.
+
+Whether you're a seasoned developer or just starting out, this template provides a structured approach to developing scalable applications. Dive in to explore the features and structure, and customize it to fit your project's needs!
+
+## Basic information
+
 - Language: `TS`
 - Framework: `Next.js`
-- Lib: `Axios` , `Shadcn`
+- Lib: `Axios` , `Shadcn`, `Next-intl`, `Zod`, `React Hook Form`, `Tailwind CSS`, `Lucide`, `clsx`, `Redux`, `Redux Toolkit`
 
-## Cấu trúc
+## Structure
 
 ```
 .
-├── app
+├── app/
 │   ├── assets
 │   └── types
 ├── components
 │   ├── ui
+│   ├── form
 │   └── ...main components
-├── lib
-└── ...main app files
+├── helpers/
+├── hooks/
+├── i18n/
+├── lib/
+├── messages/
+├── services/
+├── types/
+└── ...main project files
 ```
 
-## Tính năng cơ bản
+## Basic Features
 
-### Trải nghiệm người dùng (UX)
+### User Experience (UX)
 
 - **Theme Mode**:
-  - Sáng/Tối tùy chỉnh
-  - Tự động theo hệ thống hoặc giờ mặt trời
-- **Form Validation**: Kiểm tra và xử lý dữ liệu form trước khi gửi, với thông báo lỗi rõ ràng với `React Hook Form`
+  - Custom Light/Dark
+  - Auto system or solar time
+- **Form Validation**: Check and process form data before submitting, with clear error messages with `React Hook Form`
 - **Multi-language Support**:
-  - Vi
-  - En
+  - Vi: Vietnamese
+  - En: English
 
-### Giao diện người dùng (UI)
+### User Interface (UI)
 
-- **Search Functionality**: Tính năng tìm kiếm nhanh, tự động gợi ý kết quả.
-  - **Caching**
-  - **Highlighting**
-  - **Debouncing** với `lodash`
+- **Search Functionality**: Fast search feature, automatically suggesting results.
+- **Caching**
+- **Highlighting**
+- **Debouncing** with `lodash`
 - **Error Pages**:
-  - **404 - Not Found**
-  - **500 - Internal Server Error**
+  - 404 - Not Found
+  - Other error pages
 
-### Tối ưu công cụ tìm kiếm (SEO)
+### Search Engine Optimization (SEO)
 
-- **Meta Tags Optimization**: Tối ưu các thẻ meta (title, description, keywords) để cải thiện SEO.
-- **Structured Data**: Áp dụng dữ liệu có cấu trúc (Schema.org) để giúp công cụ tìm kiếm hiểu nội dung.
-- **Sitemap & Robots.txt**: Tạo sitemap và tệp robots.txt để hướng dẫn các công cụ tìm kiếm.
-- **Accessible URLs**: Đảm bảo URL dễ đọc và thân thiện với SEO.
+- **Meta Tags Optimization**: Optimize meta tags (title, description, keywords) to improve SEO.
+- **Structured Data**: Apply structured data (Schema.org) to help search engines understand the content.
+- **Sitemap & Robots.txt**: Create a sitemap and robots.txt file to guide search engines.
+- **Accessible URLs**: Ensure URLs are readable and SEO friendly.
 
-### Tối ưu hiệu suất (Performance)
+### Performance
 
-- **Lazy Loading**: Tải dữ liệu khi cần thiết (tối ưu hóa tốc độ trang).
-- **Image Optimization**: Tối ưu hình ảnh để tải nhanh hơn mà không làm giảm chất lượng.
-- **Caching**: Áp dụng caching để cải thiện thời gian phản hồi trang.
+- **Lazy Loading**: Load data when needed (optimize page speed).
+- **Image Optimization**: Optimize images to load faster without losing quality.
+- **Caching**: Apply caching to improve page response time.
 
 ## Guide
 
@@ -92,3 +106,13 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+### License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+### Contributing
+
+- [Commit Message Convention](https://gist.github.com/brianclements/841ea7bffdb0e894c32b)
+- [Git Commit Messages](https://gist.github.com/robertpainsi/b632364184e70900af4ab688decf6f53)
+- [Git Branching Model](https://nvie.com/posts/a-successful-git-branching-model/)
