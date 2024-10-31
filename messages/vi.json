@@ -1,4 +1,8 @@
 {
+  "Error": {
+    "unknown": "Lỗi không xác định. Vui lòng thử lại sau.",
+    "axios": "Lỗi gọi API: "
+  },
   "LoginPage": {
     "Email": "Email",
     "Password": "Mật khẩu",

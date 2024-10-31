@@ -1,19 +1,19 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-// This component handles global errors for the entire app
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error & { digest?: string }
-  reset: () => void
-}) {
+import { Button } from "@/components/ui/button";
+
+interface IError {
+  error: Error & { digest?: string };
+  reset: () => void;
+}
+
+export default function Error({ error, reset }: IError) {
   const t = useTranslations("InternalErrorPage");
-  console.error(error)
+  if (process.env.NODE_ENV === "development") console.error(error);
+
   return (
     <div className="h-screen w-full flex items-center justify-center background">
       <div className="text-center min-w-96 max-w-md p-6 background border shadow-lg rounded-lg">
@@ -22,7 +22,9 @@ export default function Error({
         <p className="text-sm md:text-base mt-4">{t("description")}.</p>
         <div className="mt-4">
           <Link href="/">
-            <Button size="sm" onClick={() => reset()}>{t("retry")}</Button>
+            <Button size="sm" onClick={() => reset()}>
+              {t("retry")}
+            </Button>
           </Link>
         </div>
       </div>
