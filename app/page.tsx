@@ -1,5 +1,5 @@
 import { ModeToggle } from "@/components/toggle-theme";
-import SignInForm from "@/components/sign-in-form";
+import SignInForm from "@/components/form/sign-in-form";
 import { LocaleSwitcherSelect } from "@/components/locale-switcher-select";
 import SearchBox from "@/components/search-funcitonality";
 
