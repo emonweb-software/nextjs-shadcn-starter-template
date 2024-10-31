@@ -1,4 +1,8 @@
 {
+  "Error": {
+    "unknown": "An unexpected error occurred. Please try again later.",
+    "axios": "Error calling API: "
+  },
   "LoginPage": {
     "Email": "Email",
     "Password": "Password",
