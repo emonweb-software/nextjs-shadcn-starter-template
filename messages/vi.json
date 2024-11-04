@@ -1,4 +1,8 @@
 {
+  "Error": {
+    "unknown": "Lỗi không xác định. Vui lòng thử lại sau.",
+    "axios": "Lỗi gọi API: "
+  },
   "LoginPage": {
     "Email": "Email",
     "Password": "Mật khẩu",
@@ -10,5 +14,15 @@
     "System": "theo cài đặt",
     "AutoDarkMode": "Chế độ tối tự động",
     "language": "ngôn ngữ"
+  },
+  "InternalErrorPage": {
+    "title": "Máy chủ đang gặp sự cố",
+    "description": "Chúng tôi đã gặp phải lỗi không mong muốn. Nhóm của chúng tôi đã được thông báo và chúng tôi đang nỗ lực khắc phục. Vui lòng thử lại sau",
+    "retry": "Thử lại"
+  },
+  "NotFoundPage": {
+    "title": "Không tìm thấy trang yêu cầu",
+    "description": "Trang này không tồn tại trên trang web của chúng tôi",
+    "backToHome": "Trở về trang chủ"
   }
 }

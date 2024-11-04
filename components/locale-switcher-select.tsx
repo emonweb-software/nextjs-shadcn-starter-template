@@ -1,6 +1,6 @@
 "use client";
 
-import * as React from "react";
+import { useLocale, useTranslations } from "next-intl";
 
 import {
   Select,
@@ -11,7 +11,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useLocale, useTranslations } from "next-intl";
 import { locales, Locale } from "@/i18n/config";
 import { setUserLocale } from "@/services/locale";
 

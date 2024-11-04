@@ -1,5 +1,5 @@
-import APP from "@/app/constants/app";
-import axios, { AxiosError } from "axios";
+import axios, { AxiosError, Method } from "axios";
+import { getTranslations } from "next-intl/server";
 
 interface IParams {
   offset?: number;
@@ -11,7 +11,10 @@ interface IParams {
 
 interface ICallAPI {
   url: string;
-  method?: "get" | "post" | "put" | "delete";
+  method?: Extract<
+    Method,
+    "get" | "head" | "post" | "put" | "patch" | "delete"
+  >;
   body?: unknown;
   isFormData?: boolean;
   params?: IParams;
@@ -26,10 +29,12 @@ export default async function callAPI({
   params,
   timeout = 3000,
 }: ICallAPI): Promise<IDataResponse<unknown> | undefined> {
+  const t = await getTranslations("Error");
+
   try {
     const response: IAxiosResponse<unknown> = await axios({
       method,
-      url: APP.BACKEND + url,
+      url: process.env.NEXT_PUBLIC_API_URL + url,
       data: body,
       headers: {
         "Content-Type": isFormData ? "multipart/form-data" : "application/json",
@@ -46,10 +51,13 @@ export default async function callAPI({
         const response: IAxiosResponse<null> = error.response;
         return response.data;
       } else {
-        console.error("Error calling API:", error.message);
+        if (process.env.NODE_ENV === "development") {
+          console.error(t("axios"), error.message);
+        }
+
         return {
           data: null,
-          errors: ["Lỗi không xác định. Liên hệ admin để được hỗ trợ!"],
+          errors: [t("unknown")],
         };
       }
     }

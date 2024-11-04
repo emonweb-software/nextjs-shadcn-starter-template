@@ -1,12 +1,14 @@
 "use client";
 
-import { z } from "zod";
-import { useZodForm } from "@/hooks";
-import { Button } from "./ui/button";
-import { delay as performSignIn } from "@/helpers/common";
-import { Form as FormProvider } from "./ui/form";
-import FormInput from "./form-input";
 import { useTranslations } from "next-intl";
+import { z } from "zod";
+
+import { useZodForm } from "@/hooks";
+import { Button } from "@/components/ui/button";
+import { delay as performSignIn } from "@/helpers/common";
+import { Form as FormProvider } from "@/components/ui/form";
+
+import FormInput from "./form-input";
 
 const SignInSchema = z.object({
   email: z.string().email(),
