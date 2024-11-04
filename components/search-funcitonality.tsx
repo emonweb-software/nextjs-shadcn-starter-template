@@ -85,6 +85,7 @@ const SearchBox = () => {
             setIsSearch(false);
           }, 200);
         }}
+        value={isSearchContent}
         onChange={handleChangeSearchContent}
         onKeyDown={handleKeyDown}
         className={`${isOpen ? "flex-1 w-[180px] sm:w-[240px]  md:w-[330px] p-[12px_45px_12px_45px]" : "w-0 border-none outline-none p-[12px_10px_12px_45px]"} leading-[20px] text-[15px] duration-700 md:duration-500 outline-none border-[1px] border-gray-200 rounded-lg placeholder:text-black/80 placeholder:text-[14px] focus:outline focus:outline-gray-500 focus:outline-offset-0`}
@@ -115,6 +116,7 @@ const SearchBox = () => {
         <X
           onClick={() => {
             setIsOpen(false);
+            setSearchContent("");
           }}
           className="z-[1] size-[20px] text-gray-500 hover:text-black absolute top-1/2 right-[12px] -translate-y-1/2 cursor-pointer"
         />
