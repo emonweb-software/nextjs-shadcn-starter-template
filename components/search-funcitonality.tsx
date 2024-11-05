@@ -27,27 +27,27 @@ const tempData = [
   "Switzerland",
 ];
 
-interface SearchBoxProps {
-  dataDefault: string[];
-  setData: (data: string[]) => void;
-  api: any;
-}
+// interface SearchBoxProps {
+//   dataDefault: string[];
+//   setData: (data: string[]) => void;
+//   api: any;
+// }
 
-const debounce = (func: Function, delay: number) => {
-  let timeoutId: NodeJS.Timeout;
-  return (...args: any[]) => {
-    if (timeoutId) clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      func(...args);
-    }, delay);
-  };
-};
+
 const SearchBox = () => {
   const [isSearch, setIsSearch] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchContent, setSearchContent] = useState("");
   const router = useRouter();
-
+const debounce = (func: (value: string) => void, delay: number) => {
+  let timeoutId: NodeJS.Timeout;
+  return (args: string) => {
+    if (timeoutId) clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func(args);
+    }, delay);
+  };
+};
   const callApi = (value: string) => {
     console.log("call api with content", value);
   };
