@@ -1,8 +1,10 @@
 "use client";
-import { Search, X } from "lucide-react";
+
 import Link from "next/link";
-import React, { useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
+import { useState, useCallback } from "react";
+import { Search, X } from "lucide-react";
+
 const tempData = [
   "Viet Nam",
   "Hong Kong",
@@ -33,21 +35,20 @@ const tempData = [
 //   api: any;
 // }
 
-
 const SearchBox = () => {
   const [isSearch, setIsSearch] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [isSearchContent, setSearchContent] = useState("");
   const router = useRouter();
-const debounce = (func: (value: string) => void, delay: number) => {
-  let timeoutId: NodeJS.Timeout;
-  return (args: string) => {
-    if (timeoutId) clearTimeout(timeoutId);
-    timeoutId = setTimeout(() => {
-      func(args);
-    }, delay);
+  const debounce = (func: (value: string) => void, delay: number) => {
+    let timeoutId: NodeJS.Timeout;
+    return (args: string) => {
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        func(args);
+      }, delay);
+    };
   };
-};
   const callApi = (value: string) => {
     console.log("call api with content", value);
   };

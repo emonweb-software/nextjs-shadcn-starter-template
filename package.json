@@ -1,19 +1,21 @@
 {
   "name": "nextjs-shadcn-starter-template",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
     "prepare": "husky",
-    "dev": "next dev",
+    "dev": "next dev --experimental-https",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "format": "prettier --write ."
+    "start": "next start --experimental-https",
+    "lint-staged": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,md}": [
-      "npm run lint",
-      "npm run format"
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
     ]
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="h-screen w-full flex justify-center items-center background">
+    <div className="h-screen max-w-7xl w-full mx-auto flex flex-col justify-center items-center space-y-4 background text-center">
       <p>
         Welcome to the Nextjs Shadcn Starter Template! This project serves as a
         robust foundation for building modern web applications using Next.js and
