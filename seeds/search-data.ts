@@ -1,0 +1,25 @@
+const searchData: string[] = [
+  "Viet Nam",
+  "Hong Kong",
+  "Thailand",
+  "Taiwan",
+  "Singapore",
+  "South Korea",
+  "Japan",
+  "Denmark",
+  "Sweden",
+  "Poland",
+  "Portugal",
+  "Ireland",
+  "Czech Republic",
+  "Austria",
+  "Belize",
+  "Belgium",
+  "United Kingdom",
+  "France",
+  "Finland",
+  "Spain",
+  "Switzerland",
+];
+
+export default searchData;

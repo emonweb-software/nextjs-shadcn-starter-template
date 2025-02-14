@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
@@ -10,7 +11,10 @@ interface IError {
   reset: () => void;
 }
 
-export default function Error({ error, reset }: IError) {
+export default function Error({
+  error,
+  reset,
+}: IError): Readonly<React.ReactElement> {
   const t = useTranslations("app.error");
   if (process.env.NODE_ENV === "development") console.error(error);
 

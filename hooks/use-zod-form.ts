@@ -1,11 +1,7 @@
+import type { FieldValues, UseFormProps, UseFormReturn } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import {
-  useForm,
-  UseFormProps,
-  UseFormReturn,
-  FieldValues,
-} from "react-hook-form";
+import type { z } from "zod";
 
 type ZodSchema = z.ZodType<FieldValues>;
 type InferredZodSchema<T extends ZodSchema> = z.infer<T>;

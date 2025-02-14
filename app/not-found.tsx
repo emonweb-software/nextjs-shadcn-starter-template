@@ -1,10 +1,12 @@
 "use client";
 
-import { Button } from "@/components/atom-ui/button";
-import { useTranslations } from "next-intl";
+import React from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-export default function NotFound() {
+import { Button } from "@/components/atom-ui/button";
+
+export default function NotFound(): Readonly<React.ReactElement> {
   const t = useTranslations("app.not-found");
 
   return (

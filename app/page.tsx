@@ -1,4 +1,6 @@
-export default function Home() {
+import React from "react";
+
+export default function Home(): React.ReactElement {
   return (
     <div className="h-screen max-w-7xl w-full mx-auto flex flex-col justify-center items-center space-y-4 background text-center">
       <p>

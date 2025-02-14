@@ -1,12 +1,13 @@
 "use client";
 
+import React from "react";
 import { z } from "zod";
 
-import { useZodForm } from "@/hooks";
 import { Button } from "@/components/atom-ui/button";
-import { delay as performSignIn } from "@/helpers/common";
 import { Form as FormProvider } from "@/components/atom-ui/form";
 import FormInput from "@/components/mole-ui/form-input";
+import { delay as performSignIn } from "@/helpers/common";
+import { useZodForm } from "@/hooks";
 
 const FormSchema = z.object({
   email: z.string().email(),
@@ -15,7 +16,7 @@ const FormSchema = z.object({
 
 type FormValues = z.infer<typeof FormSchema>;
 
-export default function FormExample() {
+export default function FormExample(): React.ReactElement {
   const form = useZodForm({
     schema: FormSchema,
     defaultValues: {
@@ -42,22 +43,22 @@ export default function FormExample() {
   return (
     <FormProvider {...form}>
       <form
-        onSubmit={handleSubmit(onSending)}
-        className="space-y-8 min-w-96 max-w-[600px] p-6 background shadow-lg rounded-lg border">
+        className="space-y-8 min-w-96 max-w-[600px] p-6 background shadow-lg rounded-lg border"
+        onSubmit={handleSubmit(onSending)}>
         <FormInput
           control={control}
-          name="email"
           label="Email"
+          name="email"
           placeholder="Email"
         />
         <FormInput
           control={control}
-          type="password"
-          name="password"
           label="Password"
+          name="password"
           placeholder="Password"
+          type="password"
         />
-        <Button type="submit" disabled={isSubmitting}>
+        <Button disabled={isSubmitting} type="submit">
           {isSubmitting ? "Submitting" : "Submit"}
         </Button>
       </form>

@@ -8,5 +8,6 @@
   "bracketSameLine": true,
   "arrowParens": "avoid",
   "printWidth": 80,
-  "endOfLine": "lf"
+  "endOfLine": "lf",
+  "jsxSingleQuote": false
 }

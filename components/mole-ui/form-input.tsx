@@ -1,13 +1,14 @@
-import { Control, FieldValues, Path } from "react-hook-form";
+import React from "react";
+import type { Control, FieldValues, Path } from "react-hook-form";
 
-import { Input } from "@/components/atom-ui/input";
 import {
+  FormControl,
+  FormField,
   FormItem,
   FormLabel,
   FormMessage,
-  FormField,
-  FormControl,
 } from "@/components/atom-ui/form";
+import { Input } from "@/components/atom-ui/input";
 
 interface FormInputProps<T extends FieldValues> {
   control: Control<T>;
@@ -17,26 +18,26 @@ interface FormInputProps<T extends FieldValues> {
   placeholder: string;
 }
 
-export default function FormInput<T extends FieldValues>({
+const FormInput = <T extends FieldValues>({
   control,
   name,
   label,
   type = "text",
   placeholder,
-}: FormInputProps<T>) {
-  return (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem>
-          <FormLabel>{label}</FormLabel>
-          <FormControl>
-            <Input type={type} placeholder={placeholder} {...field} />
-          </FormControl>
-          <FormMessage />
-        </FormItem>
-      )}
-    />
-  );
-}
+}: FormInputProps<T>): React.ReactElement => (
+  <FormField
+    control={control}
+    name={name}
+    render={({ field }) => (
+      <FormItem>
+        <FormLabel>{label}</FormLabel>
+        <FormControl>
+          <Input placeholder={placeholder} type={type} {...field} />
+        </FormControl>
+        <FormMessage />
+      </FormItem>
+    )}
+  />
+);
+
+export default FormInput;

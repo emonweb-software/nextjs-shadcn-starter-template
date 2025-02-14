@@ -1,1 +1,3 @@
-type TIcons = { [key: string]: React.ComponentType<IconType> };
+interface TIcons {
+  [key: string]: React.ComponentType<IconType>;
+}

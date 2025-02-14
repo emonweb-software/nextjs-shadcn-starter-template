@@ -1,8 +1,9 @@
 "use client";
 
+import React from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function Search() {
+export default function Search(): React.ReactElement {
   const searchParams = useSearchParams();
   const param = searchParams.get("param");
 

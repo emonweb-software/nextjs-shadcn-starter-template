@@ -1,9 +1,8 @@
 "use client";
 
-import * as React from "react";
+import React from "react";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
-
-import Icons from "@/custom/icons";
 
 import {
   Select,
@@ -12,7 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/atom-ui/select";
-import { useTranslations } from "next-intl";
+import Icons from "@/custom/icons";
 
 const ThemeSwitcher = (): React.ReactElement => {
   const t = useTranslations("features.globals.theme-switcher");

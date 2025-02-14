@@ -1,3 +1,4 @@
+import React from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
@@ -63,20 +64,20 @@ export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): Promise<React.ReactElement> {
   const locale = await getLocale();
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html suppressHydrationWarning lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
           <NextThemesProvider
-            attribute="class"
-            defaultTheme="system"
+            disableTransitionOnChange
             enableSystem
-            disableTransitionOnChange>
+            attribute="class"
+            defaultTheme="system">
             {children}
           </NextThemesProvider>
         </NextIntlClientProvider>
