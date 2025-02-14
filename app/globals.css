@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -66,18 +56,21 @@ body {
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
   body {
+    font-family: Arial, Helvetica, sans-serif;
     @apply bg-background text-foreground;
+  }
+  button:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
 }
 
-button:focus {
-  outline: none !important;
-  box-shadow: none !important;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
 }

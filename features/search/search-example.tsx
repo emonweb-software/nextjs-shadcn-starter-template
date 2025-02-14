@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import * as React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
@@ -29,12 +29,6 @@ const tempData = [
   "Spain",
   "Switzerland",
 ];
-
-// interface SearchBoxProps {
-//   dataDefault: string[];
-//   setData: (data: string[]) => void;
-//   api: any;
-// }
 
 const SearchBox = () => {
   const [isSearch, setIsSearch] = React.useState(false);
