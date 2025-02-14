@@ -1,27 +1,23 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { z } from "zod";
 
 import { useZodForm } from "@/hooks";
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/atom-ui/button";
 import { delay as performSignIn } from "@/helpers/common";
-import { Form as FormProvider } from "@/components/ui/form";
+import { Form as FormProvider } from "@/components/atom-ui/form";
+import FormInput from "@/components/mole-ui/form-input";
 
-import FormInput from "./form-input";
-
-const SignInSchema = z.object({
+const FormSchema = z.object({
   email: z.string().email(),
   password: z.string().min(8),
 });
 
-type SignInFormValues = z.infer<typeof SignInSchema>;
+type FormValues = z.infer<typeof FormSchema>;
 
-export default function SignInForm() {
-  const t = useTranslations("LoginPage");
-
+export default function FormExample() {
   const form = useZodForm({
-    schema: SignInSchema,
+    schema: FormSchema,
     defaultValues: {
       email: "test-email@gmail.com",
       password: "",
@@ -34,9 +30,9 @@ export default function SignInForm() {
     formState: { isSubmitting },
   } = form;
 
-  const onSignIn = async (formData: SignInFormValues) => {
+  const onSending = async (formData: FormValues) => {
     try {
-      console.log("submitted data:", formData);
+      console.log("Submitted data:", formData);
       await performSignIn(10000);
     } catch (error) {
       console.error(error);
@@ -46,23 +42,23 @@ export default function SignInForm() {
   return (
     <FormProvider {...form}>
       <form
-        onSubmit={handleSubmit(onSignIn)}
+        onSubmit={handleSubmit(onSending)}
         className="space-y-8 min-w-96 max-w-[600px] p-6 background shadow-lg rounded-lg border">
         <FormInput
           control={control}
           name="email"
-          label={t("Email")}
-          placeholder={t("PlaceholderEmail")}
+          label="Email"
+          placeholder="Email"
         />
         <FormInput
           control={control}
           type="password"
           name="password"
-          label={t("Password")}
-          placeholder={t("PlaceholderPassWord")}
+          label="Password"
+          placeholder="Password"
         />
         <Button type="submit" disabled={isSubmitting}>
-          {(isSubmitting && `${t("SignUp")}...`) || t("SignUp")}
+          {isSubmitting ? "Submitting" : "Submit"}
         </Button>
       </form>
     </FormProvider>

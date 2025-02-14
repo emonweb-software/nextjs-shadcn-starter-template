@@ -1,11 +1,11 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/atom-ui/button";
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 
 export default function NotFound() {
-  const t = useTranslations("NotFoundPage");
+  const t = useTranslations("app.not-found");
 
   return (
     <div className="h-screen w-full flex items-center justify-center background">

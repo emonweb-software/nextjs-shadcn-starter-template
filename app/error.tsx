@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/ui/button";
+import { Button } from "@/components/atom-ui/button";
 
 interface IError {
   error: Error & { digest?: string };
@@ -11,7 +11,7 @@ interface IError {
 }
 
 export default function Error({ error, reset }: IError) {
-  const t = useTranslations("InternalErrorPage");
+  const t = useTranslations("app.error");
   if (process.env.NODE_ENV === "development") console.error(error);
 
   return (

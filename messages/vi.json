@@ -1,28 +1,31 @@
 {
-  "Error": {
-    "unknown": "Lỗi không xác định. Vui lòng thử lại sau.",
+  "app": {
+    "error": {
+      "title": "Máy chủ đang gặp sự cố",
+      "description": "Chúng tôi đã gặp phải một lỗi không mong đợi. Đội ngũ của chúng tôi đã được thông báo và chúng tôi đang làm việc để khắc phục. Vui lòng thử lại sau.",
+      "retry": "Thử lại"
+    },
+    "not-found": {
+      "title": "Không tìm thấy trang",
+      "description": "Trang này không tồn tại trên trang web của chúng tôi.",
+      "backToHome": "Quay về trang chủ"
+    }
+  },
+  "features": {
+    "globals": {
+      "locale-switcher": {
+        "en": "Tiếng Anh",
+        "vi": "Tiếng Việt"
+      },
+      "theme-switcher": {
+        "light": "Sáng",
+        "dark": "Tối",
+        "auto": "Tự động",
+        "system": "Hệ thống"
+      }
+    }
+  },
+  "lib": {
     "axios": "Lỗi gọi API: "
-  },
-  "LoginPage": {
-    "Email": "Email",
-    "Password": "Mật khẩu",
-    "PlaceholderEmail": "hãy nhập email",
-    "PlaceholderPassWord": "hãy nhập mật khẩu",
-    "SignUp": "đăng nhập",
-    "Light": "sáng",
-    "Dark": "đêm",
-    "System": "theo cài đặt",
-    "AutoDarkMode": "Chế độ tối tự động",
-    "language": "ngôn ngữ"
-  },
-  "InternalErrorPage": {
-    "title": "Máy chủ đang gặp sự cố",
-    "description": "Chúng tôi đã gặp phải lỗi không mong muốn. Nhóm của chúng tôi đã được thông báo và chúng tôi đang nỗ lực khắc phục. Vui lòng thử lại sau",
-    "retry": "Thử lại"
-  },
-  "NotFoundPage": {
-    "title": "Không tìm thấy trang yêu cầu",
-    "description": "Trang này không tồn tại trên trang web của chúng tôi",
-    "backToHome": "Trở về trang chủ"
   }
 }

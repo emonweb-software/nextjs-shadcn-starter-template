@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 import "./globals.css";
 
@@ -72,13 +72,13 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
+          <NextThemesProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange>
             {children}
-          </ThemeProvider>
+          </NextThemesProvider>
         </NextIntlClientProvider>
       </body>
     </html>

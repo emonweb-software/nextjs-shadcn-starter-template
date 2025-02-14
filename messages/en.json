@@ -1,28 +1,31 @@
 {
-  "Error": {
-    "unknown": "An unexpected error occurred. Please try again later.",
+  "app": {
+    "error": {
+      "title": "The server is down",
+      "description": "We encountered an unexpected error. Our team has been notified, and we are working to fix it. Please try again later",
+      "retry": "Retry"
+    },
+    "not-found": {
+      "title": "Page Not Found",
+      "description": "This page is not exist on our website",
+      "backToHome": "Back to home"
+    }
+  },
+  "features": {
+    "globals": {
+      "locale-switcher": {
+        "en": "English",
+        "vi": "Vietnamese"
+      },
+      "theme-switcher": {
+        "light": "Light",
+        "dark": "Dark",
+        "auto": "Auto",
+        "system": "System"
+      }
+    }
+  },
+  "lib": {
     "axios": "Error calling API: "
-  },
-  "LoginPage": {
-    "Email": "Email",
-    "Password": "Password",
-    "PlaceholderEmail": "Enter your email",
-    "PlaceholderPassWord": "Enter your password",
-    "SignUp": "Sign up",
-    "Light": "Light",
-    "Dark": "Dark",
-    "System": "System",
-    "AutoDarkMode": "Auto Dark Mode",
-    "language": "Language"
-  },
-  "InternalErrorPage": {
-    "title": "The server is down",
-    "description": "We encountered an unexpected error. Our team has been notified, and we are working to fix it. Please try again later",
-    "retry": "Retry"
-  },
-  "NotFoundPage": {
-    "title": "Page Not Found",
-    "description": "This page is not exist on our website",
-    "backToHome": "Back to home"
   }
 }

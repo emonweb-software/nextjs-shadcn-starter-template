@@ -1,13 +1,13 @@
 import { Control, FieldValues, Path } from "react-hook-form";
 
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/atom-ui/input";
 import {
   FormItem,
   FormLabel,
   FormMessage,
   FormField,
   FormControl,
-} from "@/components/ui/form";
+} from "@/components/atom-ui/form";
 
 interface FormInputProps<T extends FieldValues> {
   control: Control<T>;

@@ -29,7 +29,7 @@ export default async function callAPI({
   params,
   timeout = 3000,
 }: ICallAPI): Promise<IDataResponse<unknown> | undefined> {
-  const t = await getTranslations("Error");
+  const t = await getTranslations("lib.axios");
 
   try {
     const response: IAxiosResponse<unknown> = await axios({

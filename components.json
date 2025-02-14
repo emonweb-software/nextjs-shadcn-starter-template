@@ -12,9 +12,10 @@
   },
   "aliases": {
     "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
+    "ui": "@/components/atom-ui",
+    "custom": "@/custom",
     "lib": "@/lib",
+    "utils": "@/lib/utils",
     "hooks": "@/hooks"
   }
 }

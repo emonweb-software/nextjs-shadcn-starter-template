@@ -1,9 +1,10 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState, useCallback } from "react";
-import { Search, X } from "lucide-react";
+
+import Icons from "@/custom/icons";
 
 const tempData = [
   "Viet Nam",
@@ -36,9 +37,9 @@ const tempData = [
 // }
 
 const SearchBox = () => {
-  const [isSearch, setIsSearch] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const [isSearchContent, setSearchContent] = useState("");
+  const [isSearch, setIsSearch] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isSearchContent, setSearchContent] = React.useState("");
   const router = useRouter();
   const debounce = (func: (value: string) => void, delay: number) => {
     let timeoutId: NodeJS.Timeout;
@@ -53,7 +54,8 @@ const SearchBox = () => {
     console.log("call api with content", value);
   };
 
-  const debouncedCallApi = useCallback(debounce(callApi, 1000), []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const debouncedCallApi = React.useCallback(debounce(callApi, 1000), []);
 
   const handleChangeSearchContent = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -72,7 +74,7 @@ const SearchBox = () => {
   const displayData = filteredData.length > 0 ? filteredData : ["No data"];
   return (
     <div className="relative w-fit">
-      <Search
+      <Icons.search
         onClick={() => {
           setIsOpen(true);
         }}
@@ -114,7 +116,7 @@ const SearchBox = () => {
         </div>
       )}
       {isOpen && (
-        <X
+        <Icons.close
           onClick={() => {
             setIsOpen(false);
             setSearchContent("");
