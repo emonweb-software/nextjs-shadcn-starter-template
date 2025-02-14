@@ -1,11 +1,13 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { useTranslations } from "next-intl";
+import React from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-export default function NotFound() {
-  const t = useTranslations("NotFoundPage");
+import { Button } from "@/components/atom-ui/button";
+
+export default function NotFound(): Readonly<React.ReactElement> {
+  const t = useTranslations("app.not-found");
 
   return (
     <div className="h-screen w-full flex items-center justify-center background">

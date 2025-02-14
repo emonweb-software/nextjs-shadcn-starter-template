@@ -1,5 +1,6 @@
-import axios, { AxiosError, Method } from "axios";
 import { getTranslations } from "next-intl/server";
+import type { Method } from "axios";
+import axios, { AxiosError } from "axios";
 
 interface IParams {
   offset?: number;
@@ -29,7 +30,7 @@ export default async function callAPI({
   params,
   timeout = 3000,
 }: ICallAPI): Promise<IDataResponse<unknown> | undefined> {
-  const t = await getTranslations("Error");
+  const t = await getTranslations("lib.axios");
 
   try {
     const response: IAxiosResponse<unknown> = await axios({
@@ -51,9 +52,8 @@ export default async function callAPI({
         const response: IAxiosResponse<null> = error.response;
         return response.data;
       } else {
-        if (process.env.NODE_ENV === "development") {
+        if (process.env.NODE_ENV === "development")
           console.error(t("axios"), error.message);
-        }
 
         return {
           data: null,

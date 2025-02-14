@@ -1,3 +1,150 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript"]
+  "ignorePatterns": [
+    "*.config.mjs",
+    "tailwind.config.ts",
+    ".next/**",
+    "**/node_modules/**",
+    "**/dist/**",
+    "**/.git/**"
+  ],
+  "plugins": [
+    "@next/next",
+    "@typescript-eslint",
+    "react",
+    "react-hooks",
+    "jsx-a11y",
+    "simple-import-sort",
+    "prettier",
+    "security"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "rules": {
+    "arrow-body-style": ["warn", "as-needed"],
+    "curly": ["warn", "multi-or-nest", "consistent"],
+    "quotes": ["warn", "double", { "avoidEscape": true }],
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-useless-rename": "warn",
+    "no-useless-return": "warn",
+    "no-undef": "off",
+    "object-shorthand": "warn",
+    "@next/next/no-html-link-for-pages": "warn",
+    "@next/next/no-img-element": "warn",
+    "@next/next/no-unwanted-polyfillio": "warn",
+    "react/prop-types": "off",
+    "react/self-closing-comp": "warn",
+    "react/jsx-no-useless-fragment": ["warn", { "allowExpressions": true }],
+    "react/jsx-curly-brace-presence": ["warn", "never"],
+    "react/jsx-boolean-value": "warn",
+    "react/jsx-sort-props": [
+      "warn",
+      {
+        "shorthandFirst": true,
+        "callbacksLast": true,
+        "multiline": "last",
+        "ignoreCase": true,
+        "reservedFirst": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-no-bind": ["warn", { "allowArrowFunctions": true }],
+    "react/jsx-pascal-case": "warn",
+    "jsx-a11y/alt-text": "warn",
+    "jsx-a11y/aria-props": "warn",
+    "jsx-a11y/aria-role": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          ["^react", "^next", "^@?\\w"],
+          ["^~(/.*|$)"],
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          ["^.+\\.s?css$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "warn",
+    "security/detect-object-injection": "warn",
+    "security/detect-non-literal-regexp": "warn",
+    "security/detect-possible-timing-attacks": "warn",
+    "security/detect-unsafe-regex": "warn",
+    "security/detect-buffer-noassert": "warn",
+    "prettier/prettier": [
+      "warn",
+      {
+        "tabWidth": 2,
+        "useTabs": false,
+        "semi": true,
+        "singleQuote": false,
+        "trailingComma": "es5",
+        "bracketSpacing": true,
+        "bracketSameLine": true,
+        "arrowParens": "avoid",
+        "printWidth": 80,
+        "endOfLine": "lf",
+        "jsxSingleQuote": false
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "rules": {
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "ignoreRestSiblings": true,
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-floating-promises": "warn",
+        "@typescript-eslint/explicit-member-accessibility": [
+          "warn",
+          { "accessibility": "explicit" }
+        ],
+        "@typescript-eslint/consistent-type-imports": [
+          "warn",
+          { "prefer": "type-imports" }
+        ],
+        "@typescript-eslint/consistent-type-definitions": ["warn", "interface"],
+        "@typescript-eslint/explicit-function-return-type": [
+          "warn",
+          {
+            "allowExpressions": true,
+            "allowTypedFunctionExpressions": true
+          }
+        ],
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        "@typescript-eslint/no-unnecessary-condition": "warn"
+      }
+    },
+    {
+      "files": [
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx"
+      ],
+      "rules": {
+        "@typescript-eslint/no-explicit-any": "off",
+        "react/jsx-no-constructed-context-values": "off"
+      }
+    }
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

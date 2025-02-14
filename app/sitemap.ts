@@ -1,11 +1,14 @@
-export default async function sitemap() {
+interface ISitemap {
+  url: string;
+  lastModified: string;
+}
+
+export default async function sitemap(): Promise<ISitemap[]> {
   // TODO: Get all your dynamic routes here
   const dynamicRoutes: string[] = [];
 
-  const routes = dynamicRoutes.map(route => ({
+  return dynamicRoutes.map(route => ({
     url: `${process.env.NEXT_PUBLIC_BASE_URL || "https://localhost:3000"}${route}`,
     lastModified: new Date().toISOString(),
   }));
-
-  return routes;
 }

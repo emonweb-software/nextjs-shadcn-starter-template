@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import { useLocale, useTranslations } from "next-intl";
 
 import {
@@ -10,16 +11,17 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select";
-import { locales, Locale } from "@/i18n/config";
+} from "@/components/atom-ui/select";
+import type { Locale } from "@/i18n/config";
+import { locales } from "@/i18n/config";
 import { setUserLocale } from "@/services/locale";
 
-export function LocaleSwitcherSelect() {
-  const t = useTranslations("LoginPage");
+const LocaleSwitcher = (): React.ReactElement => {
+  const t = useTranslations("features.site.locale-switcher");
   const locale = useLocale();
 
-  const handleChange = (value: string) => {
-    setUserLocale(value as Locale);
+  const handleChange = (value: string): void => {
+    void setUserLocale(value as Locale);
   };
 
   return (
@@ -31,7 +33,7 @@ export function LocaleSwitcherSelect() {
         <SelectGroup>
           <SelectLabel>{t("language")}</SelectLabel>
           {locales.map(item => (
-            <SelectItem value={item} key={item}>
+            <SelectItem key={item} value={item}>
               {item}
             </SelectItem>
           ))}
@@ -39,4 +41,6 @@ export function LocaleSwitcherSelect() {
       </SelectContent>
     </Select>
   );
-}
+};
+
+export default LocaleSwitcher;

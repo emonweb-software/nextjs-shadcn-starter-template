@@ -1,8 +1,9 @@
+import React from "react";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider as NextThemesProvider } from "next-themes";
 
 import "./globals.css";
 
@@ -63,22 +64,22 @@ export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>): Promise<React.ReactElement> {
   const locale = await getLocale();
   const messages = await getMessages();
 
   return (
-    <html lang={locale} suppressHydrationWarning>
+    <html suppressHydrationWarning lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider messages={messages}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
+          <NextThemesProvider
+            disableTransitionOnChange
             enableSystem
-            disableTransitionOnChange>
+            attribute="class"
+            defaultTheme="system">
             {children}
-          </ThemeProvider>
+          </NextThemesProvider>
         </NextIntlClientProvider>
       </body>
     </html>
