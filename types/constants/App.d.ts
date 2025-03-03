@@ -1,3 +1,0 @@
-interface IApp {
-  BACKEND: string;
-}

@@ -4,7 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
-import { Button } from "@/components/atom-ui/button";
+import { Button } from "@/components/ui/button";
 
 export default function NotFound(): Readonly<React.ReactElement> {
   const t = useTranslations("app.not-found");

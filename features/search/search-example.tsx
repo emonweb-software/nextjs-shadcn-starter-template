@@ -43,7 +43,7 @@ const SearchBox = (): React.ReactElement => {
   const displayData = filteredData.length > 0 ? filteredData : ["No data"];
   return (
     <div className="relative w-fit">
-      <Icons.search
+      <Icons.Search
         className={`size-[22px] text-gray-600 absolute ${isOpen ? "top-1/2 left-[14px] -translate-y-1/2" : "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 "} duration-100 cursor-pointer`}
         onClick={() => {
           setIsOpen(true);
@@ -83,7 +83,7 @@ const SearchBox = (): React.ReactElement => {
         </div>
       )}
       {isOpen && (
-        <Icons.close
+        <Icons.Close
           className="z-[1] size-[20px] text-gray-500 hover:text-black absolute top-1/2 right-[12px] -translate-y-1/2 cursor-pointer"
           onClick={(): void => {
             setIsOpen(false);

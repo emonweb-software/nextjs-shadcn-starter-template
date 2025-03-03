@@ -7,8 +7,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/atom-ui/form";
-import { Input } from "@/components/atom-ui/input";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
 
 interface FormInputProps<T extends FieldValues> {
   control: Control<T>;

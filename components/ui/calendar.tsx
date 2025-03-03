@@ -3,9 +3,9 @@
 import React from "react";
 import { DayPicker } from "react-day-picker";
 
+import { buttonVariants } from "@/components/ui/button";
 import Icons from "@/custom/icons";
 import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/atom-ui/button";
 
 export type CalendarProps = React.ComponentProps<typeof DayPicker>;
 
@@ -17,8 +17,8 @@ function Calendar({
 }: CalendarProps) {
   return (
     <DayPicker
-      showOutsideDays={showOutsideDays}
       className={cn("p-3", className)}
+      showOutsideDays={showOutsideDays}
       classNames={{
         months: "flex flex-col sm:flex-row space-y-4 sm:space-x-4 sm:space-y-0",
         month: "space-y-4",
@@ -54,8 +54,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <Icons.left className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <Icons.right className="h-4 w-4" />,
+        IconLeft: ({ ...props }) => <Icons.Left className="h-4 w-4" />,
+        IconRight: ({ ...props }) => <Icons.Right className="h-4 w-4" />,
       }}
       {...props}
     />

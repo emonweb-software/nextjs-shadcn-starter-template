@@ -14,18 +14,18 @@ import {
 } from "lucide-react";
 
 const Icons: TIcons = {
-  left: ChevronLeft,
-  right: ChevronRight,
-  up: ChevronUp,
-  down: ChevronDown,
-  check: Check,
-  search: Search,
-  close: X,
-  circle: Circle,
-  system: Computer,
-  light: Sun,
-  dark: Moon,
-  auto: Sunrise,
+  Left: ChevronLeft,
+  Right: ChevronRight,
+  Up: ChevronUp,
+  Down: ChevronDown,
+  Check,
+  Search,
+  Close: X,
+  Circle,
+  System: Computer,
+  Light: Sun,
+  Dark: Moon,
+  Auto: Sunrise,
 };
 
 export default Icons;

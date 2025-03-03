@@ -10,7 +10,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/atom-ui/select";
+} from "@/components/ui/select";
 import Icons from "@/custom/icons";
 
 const ThemeSwitcher = (): React.ReactElement => {
@@ -59,22 +59,22 @@ const ThemeSwitcher = (): React.ReactElement => {
     {
       value: "light",
       label: t("light"),
-      icon: <Icons.light className="h-4 w-4 mr-2" />,
+      icon: <Icons.Light className="h-4 w-4 mr-2" />,
     },
     {
       value: "dark",
       label: t("dark"),
-      icon: <Icons.dark className="h-4 w-4 mr-2" />,
+      icon: <Icons.Dark className="h-4 w-4 mr-2" />,
     },
     {
       value: "auto",
       label: t("auto"),
-      icon: <Icons.auto className="h-4 w-4 mr-2" />,
+      icon: <Icons.Auto className="h-4 w-4 mr-2" />,
     },
     {
       value: "system",
       label: t("system"),
-      icon: <Icons.system className="h-4 w-4 mr-2" />,
+      icon: <Icons.System className="h-4 w-4 mr-2" />,
     },
   ];
 

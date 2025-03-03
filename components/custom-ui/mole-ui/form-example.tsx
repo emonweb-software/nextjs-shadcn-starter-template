@@ -3,9 +3,9 @@
 import React from "react";
 import { z } from "zod";
 
-import { Button } from "@/components/atom-ui/button";
-import { Form as FormProvider } from "@/components/atom-ui/form";
-import FormInput from "@/components/mole-ui/form-input";
+import FormInput from "@/components/custom-ui/mole-ui/form-input";
+import { Button } from "@/components/ui/button";
+import { Form as FormProvider } from "@/components/ui/form";
 import { delay as performSignIn } from "@/helpers/common";
 import { useZodForm } from "@/hooks";
 

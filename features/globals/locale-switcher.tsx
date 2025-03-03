@@ -11,7 +11,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/atom-ui/select";
+} from "@/components/ui/select";
 import type { Locale } from "@/i18n/config";
 import { locales } from "@/i18n/config";
 import { setUserLocale } from "@/services/locale";
@@ -30,14 +30,11 @@ const LocaleSwitcher = (): React.ReactElement => {
         <SelectValue />
       </SelectTrigger>
       <SelectContent>
-        <SelectGroup>
-          <SelectLabel>{t("language")}</SelectLabel>
-          {locales.map(item => (
-            <SelectItem key={item} value={item}>
-              {item}
-            </SelectItem>
-          ))}
-        </SelectGroup>
+        {locales.map(item => (
+          <SelectItem key={item} value={item}>
+            {t(item)}
+          </SelectItem>
+        ))}
       </SelectContent>
     </Select>
   );
